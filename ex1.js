@@ -11,9 +11,9 @@
             let check=()=>{
               alert('Checking Baggage weight: '+parseInt(document.getElementById('weight').value));
               //These should only display if it is actually overweight
-              if (weight > 15) {
-              document.getElementById('removed').style='display:block;'
-              //document.getElementById('remB').style='display:block;'
+              if (parseInt(document.getElementById('weight').value) > 15) {
+                document.getElementById('removed').style='display:block;'
+                document.getElementById('remB').style='display:block;'
               }
             }
             let remove=()=>alert('Removing weight: '+parseInt(document.getElementById('removed').value))
