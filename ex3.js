@@ -7,7 +7,7 @@ let listeuler=(a,b,l)=>
         let sum = 0;
 
     for (let i of l) {
-        if (i % a === 0 || i % b === 0) {
+        if (i % a == 0 || i % b == 0) {
             sum += i;
         }
     }
@@ -23,7 +23,7 @@ let Lists2euler=(a,l)=>
 {
         let sum = 0;
     for (let i of l) {
-        if (i % a[0] === 0 || i % a[1] === 0) {
+        if (i % a[0] == 0 || i % a[1] == 0) {
             sum += i;
         }
 
@@ -35,13 +35,22 @@ let Lists2euler=(a,l)=>
         return sum;
 }
 
-let euler2Lists1=()=>
+let Lists3euler=(b,n)=>
 {
-    a=[2,3,5]//can un-hardcode
-    l=[1,2,3,4,5,6,7,9,10,10,10]
-    //call listEuler3 and alert.
+        let sum = 0;
+    for (let i of n) {
+        for (let j of b) {
+            if (i % j == 0) {
+                sum += i;
+                break;
+            }
+    }   
+    return sum;
+//    a=[2,3,5]//can un-hardcode
+//    l=[1,2,3,4,5,6,7,9,10,10,10]
+//    //call listEuler3 and alert.
 }
-
+}
 function eulerlist() {
 
     const a = Number(document.getElementById("a1").value);
@@ -73,4 +82,20 @@ function euler2Lists() {
     }
     const result = Lists2euler(a,l);
     alert(`Sum of multiples of ${a[0]} or ${a[1]} in list L is: ${result}`);
+}
+
+function euler2Lists1() {
+
+    const b = document.getElementById("bList").value
+                    .split(",")
+                    .map(x => Number(x.trim()));
+    const n = document.getElementById("nList").value
+                    .split(",")
+                    .map(x => Number(x.trim()));
+    if (b.length < 1 || b.some(isNaN) || n.some(isNaN)) {
+        alert("Please enter valid numbers. B must contain at least 1 number.");
+        return;
+    }
+    const result = Lists3euler(b,n);
+    alert(`Sum of multiples of ${b.join(", ")} in list N is: ${result}`);
 }
