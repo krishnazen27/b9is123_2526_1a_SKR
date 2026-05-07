@@ -19,11 +19,20 @@ let listeuler=(a,b,l)=>
     //call listEuler1 and alert. - compute the sum of multiples of a or b in list l
 }
 
-let euler2Lists=()=>
+let Lists2euler=(a,l)=>
 {
-    a=[2,3]//can un-hardcode
-    l=[1,2,3,4,5,6,7,9,10,10,10]
-    //call listEuler2 and alert.
+        let sum = 0;
+    for (let i of l) {
+        if (i % a[0] === 0 || i % a[1] === 0) {
+            sum += i;
+        }
+
+
+//    a=[2,3]//can un-hardcode
+//    l=[1,2,3,4,5,6,7,9,10,10,10]
+//    //call listEuler2 and alert.
+}
+        return sum;
 }
 
 let euler2Lists1=()=>
@@ -48,4 +57,20 @@ function eulerlist() {
 
     const result = listeuler(a, b, l);
     alert(`Sum of multiples of ${a} or ${b} in list L is: ${result}`);
+}
+
+function euler2Lists() {
+
+    const a = document.getElementById("aList").value
+                    .split(",")
+                    .map(x => Number(x.trim()));
+    const l = document.getElementById("mList").value
+                    .split(",")
+                    .map(x => Number(x.trim()));
+    if (a.length !== 2 || a.some(isNaN) || l.some(isNaN)) {
+        alert("Please enter valid numbers. A must contain exactly 2 numbers.");
+        return;
+    }
+    const result = Lists2euler(a,l);
+    alert(`Sum of multiples of ${a[0]} or ${a[1]} in list L is: ${result}`);
 }
