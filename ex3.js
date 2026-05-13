@@ -37,6 +37,8 @@ let Lists2euler=(a,l)=>
 
 let Lists3euler=(b,n)=>
 {
+    console.log("b:", b);
+    console.log("n:", n);
         let sum = 0;
     for (let i of n) {
         for (let j of b) {
