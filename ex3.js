@@ -37,8 +37,6 @@ let Lists2euler=(a,l)=>
 
 let Lists3euler=(b,n)=>
 {
-    console.log("b:", b);
-    console.log("n:", n);
         let sum = 0;
     for (let i of n) {
         for (let j of b) {
@@ -47,11 +45,12 @@ let Lists3euler=(b,n)=>
                 break;
             }
     }   
-    return sum;
+
 //    a=[2,3,5]//can un-hardcode
 //    l=[1,2,3,4,5,6,7,9,10,10,10]
 //    //call listEuler3 and alert.
 }
+return sum;
 }
 function eulerlist() {
 
